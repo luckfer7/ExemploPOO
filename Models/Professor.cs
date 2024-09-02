@@ -5,13 +5,17 @@ using System.Threading.Tasks;
 
 namespace ExemploPOO.Models
 {
-    public class Professor : Pessoa
+    public sealed class Professor : Pessoa
     {
+        public Professor (string nome) : base(nome)
+        {
+
+        }
         public decimal Salario { get; set; }
 
         public override void Apresentar()
         {
-            Console.WriteLine($"Olá, meu nome é {nome} e tenho {Idade} anos. Sou um professor com salário de R${Salario}!");
+            Console.WriteLine($"Olá, meu nome é {Nome} e tenho {Idade} anos. Sou um professor com salário de R${Salario}!");
         }
     }
 }
